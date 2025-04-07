@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TeCanto - Crea tu canción personalizada</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>TeCanto</h1>
+    <p>Genera una canción personalizada para alguien especial</p>
+    <form id="formulario-cancion">
+      <label>¿A quién va dedicada la canción?</label>
+      <input type="text" name="nombre_destinatario" required />
+
+      <label>¿Cuál es tu nombre o apodo?</label>
+      <input type="text" name="nombre_remitente" required />
+
+      <label>Tipo de relación</label>
+      <select name="tipo_relacion">
+        <option value="pareja">Pareja</option>
+        <option value="hijo/a">Hijo/a</option>
+        <option value="amigo/a">Amigo/a</option>
+        <option value="otro">Otro</option>
+      </select>
+
+      <label>¿Qué quieres que diga la canción? (momentos, historias, emociones...)</label>
+      <textarea name="detalle_historia" required></textarea>
+
+      <button type="submit">Generar letra en ChatGPT</button>
+    </form>
+
+    <div class="instrucciones">
+      <p>Este formulario copiará automáticamente tu historia para que puedas pegarla directamente en <strong>ChatGPT</strong> usando tu cuenta gratuita (GPT-4o).</p>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
