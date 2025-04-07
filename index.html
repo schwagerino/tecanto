@@ -1,41 +1,100 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>TeCanto - Crea tu canción personalizada</title>
-  <link rel="stylesheet" href="styles.css" />
+  <title>TeCanto</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 2rem;
+      max-width: 600px;
+      margin: auto;
+      background: #fff8f0;
+    }
+    h1 {
+      text-align: center;
+      color: #e04f5f;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+    label {
+      margin-top: 1rem;
+      font-weight: bold;
+    }
+    input, select, textarea, button {
+      padding: 0.5rem;
+      margin-top: 0.5rem;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    button {
+      margin-top: 2rem;
+      background-color: #e04f5f;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #c13d4e;
+    }
+  </style>
 </head>
 <body>
-  <div class="container">
-    <h1>TeCanto</h1>
-    <p>Genera una canción personalizada para alguien especial</p>
-    <form id="formulario-cancion">
-      <label>¿A quién va dedicada la canción?</label>
-      <input type="text" name="nombre_destinatario" required />
 
-      <label>¿Cuál es tu nombre o apodo?</label>
-      <input type="text" name="nombre_remitente" required />
+  <h1>TeCanto</h1>
+  <p>Genera una canción personalizada para alguien especial</p>
 
-      <label>Tipo de relación</label>
-      <select name="tipo_relacion">
-        <option value="pareja">Pareja</option>
-        <option value="hijo/a">Hijo/a</option>
-        <option value="amigo/a">Amigo/a</option>
-        <option value="otro">Otro</option>
-      </select>
+  <form id="songForm">
+    <label>¿A quién va dedicada la canción?</label>
+    <input type="text" name="destinatario" required />
 
-      <label>¿Qué quieres que diga la canción? (momentos, historias, emociones...)</label>
-      <textarea name="detalle_historia" required></textarea>
+    <label>¿Cuál es tu nombre o apodo?</label>
+    <input type="text" name="remitente" required />
 
-      <button type="submit">Generar letra en ChatGPT</button>
-    </form>
+    <label>Tipo de relación</label>
+    <select name="relacion">
+      <option value="Hijo/a">Hijo/a</option>
+      <option value="Pareja">Pareja</option>
+      <option value="Amigo/a">Amigo/a</option>
+      <option value="Padre/Madre">Padre/Madre</option>
+      <option value="Otro">Otro</option>
+    </select>
 
-    <div class="instrucciones">
-      <p>Este formulario copiará automáticamente tu historia para que puedas pegarla directamente en <strong>ChatGPT</strong> usando tu cuenta gratuita (GPT-4o).</p>
-    </div>
-  </div>
-  <script src="script.js"></script>
+    <label>Estilo musical</label>
+    <select name="estilo">
+      <option value="Balada">Balada</option>
+      <option value="Pop">Pop</option>
+      <option value="Rock">Rock</option>
+      <option value="Reggaetón">Reggaetón</option>
+      <option value="Infantil">Infantil</option>
+    </select>
+
+    <label>Tono de la canción</label>
+    <select name="tono">
+      <option value="Emotivo">Emotivo</option>
+      <option value="Divertido">Divertido</option>
+      <option value="Romántico">Romántico</option>
+      <option value="Motivador">Motivador</option>
+    </select>
+
+    <label>Idioma</label>
+    <select name="idioma">
+      <option value="Español">Español</option>
+      <option value="Inglés">Inglés</option>
+    </select>
+
+    <label>Palabra que quieres que contenga la canción</label>
+    <input type="text" name="palabraClave" />
+
+    <label>¿Qué quieres que diga la canción? (momentos, historias, emociones...)</label>
+    <textarea name="contenido" rows="4" required></textarea>
+
+    <button type="submit">Generar canción</button>
+  </form>
+
 </body>
 </html>
